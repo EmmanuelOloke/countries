@@ -3,8 +3,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import Header from '../components/Header';
-import Search from '../components/Search';
-import Filter from '../components/Filter';
+import SearchAndFilter from '../components/SearchAndFilter';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -20,8 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
 
       <Header/>
-      <Search/>
-      <Filter/>
+      <SearchAndFilter/>
     </ChakraProvider>
   )
 }
