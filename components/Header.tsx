@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <Flex boxShadow='md' justifyContent='center'>
         <Flex p={6} justifyContent="space-between" width="90%">
-            <Text fontSize="x-large" fontWeight="bold">Where in the world?</Text>
+            <Text fontSize="x-large" fontWeight="bold" style={{fontFamily: "'Nunito Sans', sans-serif"}}>Where in the world?</Text>
             <Flex alignItems="center">
                 <IconButton aria-label="icon" icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />} onClick={toggleColorMode}/>
                 <Text marginLeft="3">Dark Mode</Text>
