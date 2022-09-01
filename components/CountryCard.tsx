@@ -1,23 +1,51 @@
-import React from 'react';
-import {Flex, Box, Text} from '@chakra-ui/react';
+import React, { useEffect, useState } from 'react';
+import { Flex, Box, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 
-
-
-export default function CountryCard () {
-
-    return (
-        <Box flexDirection="column" boxShadow="md" rounded="md" width="17%">
-            <Image height={140} width={200} layout="responsive" src="https://flagcdn.com/w320/de.png" alt="country image" />
-
-            <Box p={5}>
-                <Text fontWeight="bold" mb="10px">Nigeria</Text>
-                <Flex flexDirection="row" flexWrap="wrap" mb="1">Population: <Text color="gray.500" ml="1">206,139,587</Text></Flex>
-                <Flex flexDirection="row" mb="1">Region: <Text color="gray.500" ml="1">Africa</Text></Flex>
-                <Flex flexDirection="row" mb="5">Capital: <Text color="gray.500" ml="1">Abuja</Text></Flex>
-            </Box>
-        </Box>
-    )
+interface Props {
+  countries: any[];
 }
 
+// export const CountryCard = ({countries}: Props) => {
 
+const CountryCard: React.FC<Props> = ({ countries }) => {
+  const eachCountry = countries?.map((country, i) => (
+    <Box flexDirection="column" boxShadow="md" rounded="md" width="17%" margin={5} key={i}>
+      <Image
+        height={140}
+        width={200}
+        layout="responsive"
+        src={country.flags.png}
+        alt="country flag"
+      />
+
+      <Box p={5}>
+        <Text fontWeight="bold" mb="10px">
+          {country.name.common}
+        </Text>
+        <Flex flexDirection="row" flexWrap="wrap" mb="1">
+          Population:
+          <Text color="gray.500" ml="1">
+            {country.population}
+          </Text>
+        </Flex>
+        <Flex flexDirection="row" mb="1">
+          Region:
+          <Text color="gray.500" ml="1">
+            {country.region}
+          </Text>
+        </Flex>
+        <Flex flexDirection="row" mb="5">
+          Capital:
+          <Text color="gray.500" ml="1">
+            {country.capital}
+          </Text>
+        </Flex>
+      </Box>
+    </Box>
+  ));
+
+  return <>{eachCountry}</>;
+};
+
+export default CountryCard;
