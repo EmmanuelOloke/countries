@@ -10,7 +10,7 @@ interface Props {
 
 const CountryCard: React.FC<Props> = ({ countries }) => {
   const eachCountry = countries?.map((country, i) => (
-    <Box flexDirection="column" boxShadow="md" rounded="md" width="17%" margin={5} key={i}>
+    <Box flexDirection="column" boxShadow="md" rounded="md" overflow="hidden" width="20%" key={i}>
       <Image
         height={140}
         width={200}
@@ -29,13 +29,13 @@ const CountryCard: React.FC<Props> = ({ countries }) => {
             {country.population}
           </Text>
         </Flex>
-        <Flex flexDirection="row" mb="1">
+        <Flex flexDirection="row" flexWrap="wrap" mb="1">
           Region:
           <Text color="gray.500" ml="1">
             {country.region}
           </Text>
         </Flex>
-        <Flex flexDirection="row" mb="5">
+        <Flex flexDirection="row" flexWrap="wrap" mb="5">
           Capital:
           <Text color="gray.500" ml="1">
             {country.capital}
