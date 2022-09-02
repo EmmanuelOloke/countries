@@ -3,7 +3,7 @@ import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from '
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-import { Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import SearchAndFilter from '../components/SearchAndFilter';
 import CountryCard from '../components/CountryCard';
 import Header from '../components/Header';
@@ -16,10 +16,23 @@ function Page({ countries }: Props) {
   return (
     <>
       <Header />
-      <div className={styles.container}>
-        <SearchAndFilter />
-        <CountryCard countries={countries} />
-      </div>
+      <SearchAndFilter />
+      <Box
+        justifyContent="center"
+        width="87%"
+        maxW={{ base: '87vw', sm: '80vw', lg: '87vw', xl: '87vw' }}
+        margin="0 auto"
+        mt={10}
+      >
+        <Flex
+          flexDirection="row"
+          gap="20"
+          flexWrap="wrap"
+          maxW={{ base: '87vw', sm: '80vw', lg: '100vw', xl: '100vw' }}
+        >
+          <CountryCard countries={countries} />
+        </Flex>
+      </Box>
     </>
   );
 }
