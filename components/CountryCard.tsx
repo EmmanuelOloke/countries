@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Flex, Box, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 
 interface Props {
   countries: any[];
 }
-
-// export const CountryCard = ({countries}: Props) => {
 
 const CountryCard: React.FC<Props> = ({ countries }) => {
   const eachCountry = countries?.map((country, i) => (
