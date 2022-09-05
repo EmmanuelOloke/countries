@@ -13,10 +13,12 @@ type Props = {
 };
 
 function Page({ countries }: Props) {
+  const [fetchedCountries, setFetchedCountries] = useState(countries);
+
   return (
     <>
       <Header />
-      <SearchAndFilter />
+      <SearchAndFilter countries={fetchedCountries} setCountries={setFetchedCountries} />
       <Box
         justifyContent="center"
         width="87%"
@@ -25,7 +27,7 @@ function Page({ countries }: Props) {
         mt={10}
       >
         <Flex flexDirection="row" gap="20" flexWrap="wrap" justifyContent="space-between">
-          <CountryCard countries={countries} />
+          <CountryCard countries={fetchedCountries} />
         </Flex>
       </Box>
     </>
