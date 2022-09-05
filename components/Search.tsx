@@ -1,6 +1,6 @@
 import React, { Dispatch, MouseEvent, SetStateAction, useState } from 'react';
 import { SearchIcon, ArrowForwardIcon } from '@chakra-ui/icons';
-import { Button, HStack, Input } from '@chakra-ui/react';
+import { Button, HStack, Input, useToast } from '@chakra-ui/react';
 
 interface Props {
   countries: any[];
@@ -9,12 +9,20 @@ interface Props {
 
 const Search: React.FC<Props> = ({ countries, setCountries }) => {
   const [inputContent, setInputContent] = useState('');
+  const toast = useToast();
 
   const handleSubmit = async (e: MouseEvent) => {
     e.preventDefault();
 
     if (!inputContent) {
-      console.log('enter something abeg');
+      toast({
+        title: 'Please enter a country name',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+        position: 'top',
+      });
+      return;
     }
 
     const response = await fetch(`https://restcountries.com/v3.1/name/${inputContent}`);
