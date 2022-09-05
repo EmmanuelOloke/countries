@@ -1,25 +1,26 @@
-import React, { MouseEvent, useState } from 'react';
+import React, { Dispatch, MouseEvent, SetStateAction, useState } from 'react';
 import { SearchIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 import { Button, HStack, Input } from '@chakra-ui/react';
 
-export default function Search() {
+interface Props {
+  countries: any[];
+  setCountries: Dispatch<SetStateAction<any[]>>;
+}
+
+const Search: React.FC<Props> = ({ countries, setCountries }) => {
   const [inputContent, setInputContent] = useState('');
 
   const handleSubmit = async (e: MouseEvent) => {
     e.preventDefault();
-
-    // interface Country {
-    //   name?: object;
-    //   common?: string;
-    // }
 
     if (!inputContent) {
       console.log('enter something abeg');
     }
 
     const response = await fetch(`https://restcountries.com/v3.1/name/${inputContent}`);
-    const countries = await response.json();
-    console.log(countries[0].name.common);
+    const searchCountries = await response.json();
+
+    setCountries(searchCountries);
   };
 
   return (
@@ -44,4 +45,6 @@ export default function Search() {
       </Button>
     </HStack>
   );
-}
+};
+
+export default Search;
