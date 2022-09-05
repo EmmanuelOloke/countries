@@ -25,20 +25,24 @@ const Search: React.FC<Props> = ({ countries, setCountries }) => {
       return;
     }
 
-    const response = await fetch(`https://restcountries.com/v3.1/name/${inputContent}`);
-    const searchCountries = await response.json();
+    try {
+      const response = await fetch(`https://restcountries.com/v3.1/name/${inputContent}`);
+      const searchCountries = await response.json();
 
-    if (response.status !== 200) {
-      toast({
-        title: 'Country Not Found',
-        status: 'error',
-        duration: 5000,
-        isClosable: true,
-        position: 'top',
-      });
-      return;
-    } else {
-      setCountries(searchCountries);
+      if (response.status !== 200) {
+        toast({
+          title: 'Country Not Found',
+          status: 'error',
+          duration: 5000,
+          isClosable: true,
+          position: 'top',
+        });
+        return;
+      } else {
+        setCountries(searchCountries);
+      }
+    } catch (error) {
+      console.log('Something went wrong', error);
     }
   };
 
