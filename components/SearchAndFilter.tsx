@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import { Flex } from '@chakra-ui/react';
 import Filter from '../components/Filter';
 import Search from '../components/Search';
 
-export default function SearchAndFilter() {
+interface Props {
+  countries: any[];
+  setCountries: Dispatch<SetStateAction<any[]>>;
+}
+
+const SearchAndFilter: React.FC<Props> = ({ countries, setCountries }) => {
   return (
     <Flex mt="50" justifyContent="center">
       <Flex
@@ -12,9 +17,11 @@ export default function SearchAndFilter() {
         w="87%"
         maxW={{ base: '87vw', sm: '80vw', lg: '87vw', xl: '87vw' }}
       >
-        <Search />
+        <Search countries={countries} setCountries={setCountries} />
         <Filter />
       </Flex>
     </Flex>
   );
-}
+};
+
+export default SearchAndFilter;
