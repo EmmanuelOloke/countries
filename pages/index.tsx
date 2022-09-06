@@ -25,6 +25,7 @@ function Page({ countries }: Props) {
         maxW={{ base: '87vw', sm: '80vw', lg: '87vw', xl: '87vw' }}
         margin="0 auto"
         mt={10}
+        mb={10}
       >
         <Flex flexDirection="row" gap="20" flexWrap="wrap" justifyContent="space-between">
           <CountryCard countries={fetchedCountries} />
