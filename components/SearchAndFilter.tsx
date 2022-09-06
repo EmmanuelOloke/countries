@@ -18,7 +18,7 @@ const SearchAndFilter: React.FC<Props> = ({ countries, setCountries }) => {
         maxW={{ base: '87vw', sm: '80vw', lg: '87vw', xl: '87vw' }}
       >
         <Search countries={countries} setCountries={setCountries} />
-        <Filter />
+        <Filter countries={countries} setCountries={setCountries} />
       </Flex>
     </Flex>
   );
