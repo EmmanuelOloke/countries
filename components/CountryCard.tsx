@@ -6,9 +6,21 @@ interface Props {
   countries: any[];
 }
 
+const showSomething = (country: any) => {
+  console.log(country.name.common);
+};
+
 const CountryCard: React.FC<Props> = ({ countries }) => {
   const eachCountry = countries?.map((country, i) => (
-    <Box flexDirection="column" boxShadow="md" rounded="md" overflow="hidden" width="20%" key={i}>
+    <Box
+      flexDirection="column"
+      boxShadow="md"
+      rounded="md"
+      overflow="hidden"
+      width="20%"
+      key={i}
+      onClick={() => showSomething(country)}
+    >
       <Image
         height={140}
         width={200}
