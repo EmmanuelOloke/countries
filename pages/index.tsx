@@ -12,7 +12,7 @@ type Props = {
   countries: object[];
 };
 
-function Page({ countries }: Props) {
+function AllCountries({ countries }: Props) {
   const [fetchedCountries, setFetchedCountries] = useState(countries);
 
   return (
@@ -40,4 +40,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const json = await response.json();
   return { props: { countries: json as any[] } };
 };
-export default Page;
+export default AllCountries;
