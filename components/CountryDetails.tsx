@@ -19,6 +19,19 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
     const values: any = Object.values(countryData.currencies);
     return values[0].name;
   };
+
+  const getBorderCountries = () => {
+    const borderCountries = countryData.borders;
+    const styledBorderCountries = borderCountries.map((borderCountry: string, i: number) => {
+      return (
+        <Box key={i} px={10} py={2} boxShadow="md" fontSize="xs" mr={5}>
+          {borderCountry}
+        </Box>
+      );
+    });
+    return styledBorderCountries;
+  };
+
   return (
     <Flex mt="3em" justifyContent="center" alignItems="center">
       <Flex w="87%" flexDirection="row" gap={100}>
@@ -33,7 +46,7 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
         <Flex flexDirection="column">
           <Heading>{countryData.name.common}</Heading>
 
-          <Flex flexDirection="row" gap={150}>
+          <Flex flexDirection="row" gap={150} mb={50}>
             <Flex flexDirection="column">
               <Flex flexDirection="row" mt={30} mb={2}>
                 <Text as="b">Native Name</Text>
@@ -71,6 +84,13 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
                 <Text>: {getLanguages()}</Text>
               </Flex>
             </Flex>
+          </Flex>
+
+          <Flex alignItems="center">
+            <Text as="b" mr={3}>
+              Border Countries:
+            </Text>
+            <Flex>{getBorderCountries()}</Flex>
           </Flex>
         </Flex>
       </Flex>
