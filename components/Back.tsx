@@ -6,7 +6,14 @@ const Back = () => {
   return (
     <Flex justifyContent="center">
       <Flex mt={58} w="87%">
-        <Button leftIcon={<ArrowBackIcon />} variant="outline" pl={5} pr={10} boxShadow="md">
+        <Button
+          leftIcon={<ArrowBackIcon />}
+          variant="outline"
+          pl={5}
+          pr={10}
+          boxShadow="md"
+          onClick={() => history.back()}
+        >
           Back
         </Button>
       </Flex>
