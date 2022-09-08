@@ -5,7 +5,7 @@ import { ArrowBackIcon } from '@chakra-ui/icons';
 const Back = () => {
   return (
     <Flex justifyContent="center">
-      <Flex mt={50} w="87%">
+      <Flex mt={58} w="87%">
         <Button leftIcon={<ArrowBackIcon />} variant="outline" pl={5} pr={10} boxShadow="md">
           Back
         </Button>
