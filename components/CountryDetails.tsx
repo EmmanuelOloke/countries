@@ -22,6 +22,13 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
 
   const getBorderCountries = () => {
     const borderCountries = countryData.borders;
+    if (!borderCountries) {
+      return (
+        <Box px={10} py={2} boxShadow="md" fontSize="sm">
+          No Border Countries
+        </Box>
+      );
+    }
     const styledBorderCountries = borderCountries.map((borderCountry: string, i: number) => {
       return (
         <Box key={i} px={10} py={2} boxShadow="md" fontSize="xs" mr={5}>
