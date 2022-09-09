@@ -15,7 +15,7 @@ const SearchAndFilter: React.FC<Props> = ({ countries, setCountries }) => {
         alignItems="center"
         justifyContent="space-between"
         w="87%"
-        maxW={{ base: '87vw', sm: '80vw', lg: '87vw', xl: '87vw' }}
+        maxW={{ base: '87vw', sm: '80vw', md: '80vw', lg: '87vw', xl: '87vw', '2xl': '65vw' }}
       >
         <Search countries={countries} setCountries={setCountries} />
         <Filter countries={countries} setCountries={setCountries} />
