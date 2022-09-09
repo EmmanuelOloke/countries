@@ -48,10 +48,10 @@ const Search: React.FC<Props> = ({ countries, setCountries }) => {
 
   return (
     <HStack
-      width="25%"
+      width="35%"
       boxShadow="base"
       alignItems="center"
-      p="4"
+      p="1"
       justifyContent="space-evenly"
       borderRadius="md"
     >
