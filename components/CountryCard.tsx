@@ -34,7 +34,7 @@ const CountryCard: React.FC<Props> = ({ countries }) => {
           <Flex flexDirection="row" flexWrap="wrap" mb="1">
             Population:
             <Text color="gray.500" ml="1">
-              {country.population}
+              {country.population.toLocaleString()}
             </Text>
           </Flex>
           <Flex flexDirection="row" flexWrap="wrap" mb="1">
