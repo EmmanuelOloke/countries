@@ -61,7 +61,7 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
               </Flex>
               <Flex flexDirection="row" mb={2}>
                 <Text as="b">Population</Text>
-                <Text>: {countryData.population}</Text>
+                <Text>: {countryData.population.toLocaleString()}</Text>
               </Flex>
               <Flex flexDirection="row" mb={2}>
                 <Text as="b">Region</Text>
