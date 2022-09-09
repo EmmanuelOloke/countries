@@ -10,7 +10,15 @@ interface Props {
 const CountryCard: React.FC<Props> = ({ countries }) => {
   const eachCountry = countries?.map((country, i) => (
     <Link href={`/${country.name.common}`} key={country.name.common}>
-      <Box flexDirection="column" boxShadow="md" rounded="md" overflow="hidden" width="20%" key={i}>
+      <Box
+        flexDirection="column"
+        boxShadow="md"
+        rounded="md"
+        overflow="hidden"
+        cursor="pointer"
+        width="20%"
+        key={i}
+      >
         <Image
           height={140}
           width={200}
