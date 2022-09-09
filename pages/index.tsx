@@ -22,7 +22,7 @@ function AllCountries({ countries }: Props) {
       <Box
         justifyContent="center"
         width="87%"
-        maxW={{ base: '87vw', sm: '80vw', lg: '87vw', xl: '87vw' }}
+        maxW={{ base: '87vw', sm: '80vw', md: '87vw', lg: '87vw', xl: '87vw', '2xl': '65vw' }}
         margin="0 auto"
         mt={10}
         mb={10}
