@@ -27,7 +27,12 @@ function AllCountries({ countries }: Props) {
         mt={10}
         mb={10}
       >
-        <Flex flexDirection="row" gap="20" flexWrap="wrap" justifyContent="space-between">
+        <Flex
+          flexDirection={{ base: 'column', sm: 'column', lg: 'row', xl: 'row' }}
+          gap="20"
+          flexWrap="wrap"
+          justifyContent="space-between"
+        >
           <CountryCard countries={fetchedCountries} />
         </Flex>
       </Box>
