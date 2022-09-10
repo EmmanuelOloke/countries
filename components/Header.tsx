@@ -7,13 +7,14 @@ export default function Header() {
   return (
     <Flex boxShadow="md" justifyContent="center">
       <Flex
-        p={5}
+        py={5}
         justifyContent="space-between"
+        alignItems="center"
         width="90%"
-        maxW={{ base: '87vw', sm: '80vw', md: '80vw', lg: '88vw', xl: '88vw', '2xl': '67vw' }}
+        maxW={{ base: '87vw', sm: '80vw', md: '80vw', lg: '88vw', xl: '87vw', '2xl': '65vw' }}
       >
         <Text
-          fontSize="x-large"
+          fontSize={{ base: 'md', sm: 'lg', md: 'lg', lg: 'lg', '2xl': 'x-large' }}
           fontWeight="bold"
           style={{ fontFamily: "'Nunito Sans', sans-serif" }}
         >
