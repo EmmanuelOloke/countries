@@ -16,7 +16,7 @@ const CountryCard: React.FC<Props> = ({ countries }) => {
         rounded="md"
         overflow="hidden"
         cursor="pointer"
-        width={{ base: '100%', sm: '100%', md: '20%', lg: '20%', xl: '20%', '2xl': '20%' }}
+        width={{ base: '100%', sm: '100%', md: '50%', lg: '40%', xl: '19%', '2xl': '20%' }}
         key={i}
       >
         <Image
