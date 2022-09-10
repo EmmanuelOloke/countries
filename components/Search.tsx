@@ -48,7 +48,7 @@ const Search: React.FC<Props> = ({ countries, setCountries }) => {
 
   return (
     <HStack
-      width="35%"
+      width={{ '2xl': '35%' }}
       boxShadow="base"
       alignItems="center"
       p="1"
