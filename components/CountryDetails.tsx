@@ -41,7 +41,11 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
 
   return (
     <Flex mt="3em" justifyContent="center" alignItems="center">
-      <Flex w="87%" flexDirection="row" gap={100}>
+      <Flex
+        w={{ base: '87vw', sm: '80vw', md: '80vw', lg: '88vw', xl: '87vw', '2xl': '55vw' }}
+        flexDirection="row"
+        gap={200}
+      >
         <Image
           height={350}
           width={470}
@@ -50,7 +54,7 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
           alt="country flag"
         />
 
-        <Flex flexDirection="column">
+        <Flex flexDirection="column" justifyContent="center">
           <Heading>{countryData.name.common}</Heading>
 
           <Flex flexDirection="row" gap={150} mb={50}>
@@ -97,7 +101,7 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
             <Text as="b" mr={3}>
               Border Countries:
             </Text>
-            <Flex>{getBorderCountries()}</Flex>
+            <Flex flexWrap="wrap">{getBorderCountries()}</Flex>
           </Flex>
         </Flex>
       </Flex>
