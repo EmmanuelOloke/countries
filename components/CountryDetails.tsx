@@ -31,7 +31,7 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
     }
     const styledBorderCountries = borderCountries.map((borderCountry: string, i: number) => {
       return (
-        <Box key={i} px={10} py={2} boxShadow="md" fontSize="xs" mr={5}>
+        <Box key={i} px={10} py={2} boxShadow="md" fontSize="xs" mr={2}>
           {borderCountry}
         </Box>
       );
@@ -40,16 +40,16 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
   };
 
   return (
-    <Flex mt="3em" justifyContent="center" alignItems="center">
+    <Flex mt="3em" mb="3em" justifyContent="center" alignItems="center">
       <Flex
         w={{ base: '87vw', sm: '80vw', md: '80vw', lg: '88vw', xl: '87vw', '2xl': '55vw' }}
-        flexDirection="row"
-        gap={200}
+        flexDirection={{ base: 'column', sm: 'column', md: 'column', xl: 'row', '2xl': 'row' }}
+        gap={{ base: 20, sm: 20, md: 20, lg: 20, xl: 150, '2xl': 150 }}
       >
         <Image
           height={350}
           width={470}
-          layout="fixed"
+          // layout="fixed"
           src={countryData.flags.svg}
           alt="country flag"
         />
@@ -57,7 +57,18 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
         <Flex flexDirection="column" justifyContent="center">
           <Heading>{countryData.name.common}</Heading>
 
-          <Flex flexDirection="row" gap={150} mb={50}>
+          <Flex
+            flexDirection={{
+              base: 'column',
+              sm: 'column',
+              md: 'column',
+              lg: 'column',
+              xl: 'row',
+              '2xl': 'row',
+            }}
+            gap={{ base: 5, sm: 5, md: 5, lg: 5, xl: 130, '2xl': 130 }}
+            mb={50}
+          >
             <Flex flexDirection="column">
               <Flex flexDirection="row" mt={30} mb={2}>
                 <Text as="b">Native Name</Text>
@@ -97,8 +108,25 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
             </Flex>
           </Flex>
 
-          <Flex alignItems="center">
-            <Text as="b" mr={3}>
+          <Flex
+            alignItems={{
+              base: 'left',
+              sm: 'left',
+              md: 'left',
+              lg: 'center',
+              xl: 'center',
+              '2xl': 'center',
+            }}
+            flexDirection={{
+              base: 'column',
+              sm: 'column',
+              md: 'column',
+              lg: 'row',
+              xl: 'row',
+              '2xl': 'row',
+            }}
+          >
+            <Text as="b" mr={3} mb={{ base: 3, sm: 3, md: 3, lg: 0, xl: 0, '2xl': 0 }}>
               Border Countries:
             </Text>
             <Flex flexWrap="wrap">{getBorderCountries()}</Flex>
