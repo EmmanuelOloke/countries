@@ -11,16 +11,19 @@ export default function Header() {
         justifyContent="space-between"
         alignItems="center"
         width="90%"
-        maxW={{ base: '87vw', sm: '80vw', md: '80vw', lg: '88vw', xl: '87vw', '2xl': '65vw' }}
+        w={{ base: '87vw', sm: '80vw', md: '80vw', lg: '88vw', xl: '87vw', '2xl': '65vw' }}
       >
         <Text
-          fontSize={{ base: 'md', sm: 'lg', md: 'lg', lg: 'lg', '2xl': 'x-large' }}
+          fontSize={{ base: 'xs', sm: 'lg', md: 'lg', lg: 'lg', '2xl': 'x-large' }}
           fontWeight="bold"
           style={{ fontFamily: "'Nunito Sans', sans-serif" }}
         >
           Where in the world?
         </Text>
-        <Flex alignItems="center">
+        <Flex
+          alignItems="center"
+          fontSize={{ base: 'xs', sm: 'lg', md: 'lg', lg: 'lg', '2xl': 'x-large' }}
+        >
           <IconButton
             aria-label="icon"
             icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
