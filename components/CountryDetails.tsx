@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import Image from 'next/image';
-import React from 'react';
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
 
 interface Props {
   countryData: any;
@@ -20,8 +21,30 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
     return values[0].name;
   };
 
-  const getBorderCountries = () => {
+  const [allCountries, setAllCountries] = useState([] as any[]);
+
+  const getFullBorderCountries: any = async () => {
+    const response = await fetch('https://restcountries.com/v3.1/all');
+    const allCountries = await response.json();
+
+    setAllCountries(allCountries);
+  };
+
+  useEffect(() => {
+    getFullBorderCountries();
+  }, []);
+
+  const getBorderCountries: any = () => {
+    /**
+     * countryData.borders get the boorder countries for current country
+     * for every borderCountry now, make a request to fetch all countries
+     * then now filter the array and return the country where the country.cca3 property === borderCountry
+     * return the country.name.common
+     */
+
     const borderCountries = countryData.borders;
+    const fullCountryNames = [];
+
     if (!borderCountries) {
       return (
         <Box px={10} py={2} boxShadow="md" fontSize="sm">
@@ -29,11 +52,22 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
         </Box>
       );
     }
-    const styledBorderCountries = borderCountries.map((borderCountry: string, i: number) => {
+
+    for (let i = 0; i < allCountries.length; i++) {
+      for (let j = 0; j < borderCountries.length; j++) {
+        if (allCountries[i].cca3 === borderCountries[j]) {
+          fullCountryNames.push(allCountries[i].name.common);
+        }
+      }
+    }
+
+    const styledBorderCountries = fullCountryNames.map((borderCountry: string, i: number) => {
       return (
-        <Box key={i} px={10} py={2} boxShadow="md" fontSize="xs" mr={2}>
-          {borderCountry}
-        </Box>
+        <Link href={`/${borderCountry}`} key={`${borderCountry}`}>
+          <Box key={i} px={5} py={2} boxShadow="md" fontSize="sm" mr={2} cursor="pointer">
+            {borderCountry}
+          </Box>
+        </Link>
       );
     });
     return styledBorderCountries;
