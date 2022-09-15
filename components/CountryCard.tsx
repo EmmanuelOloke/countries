@@ -12,7 +12,8 @@ const CountryCard: React.FC<Props> = ({ countries }) => {
     <Link href={`/${country.name.common}`} key={country.name.common}>
       <Box
         flexDirection="column"
-        boxShadow="md"
+        _hover={{ boxShadow: 'md' }}
+        boxShadow="lg"
         rounded="md"
         overflow="hidden"
         cursor="pointer"
