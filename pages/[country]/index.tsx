@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { Box } from '@chakra-ui/react';
 import { GetServerSideProps } from 'next';
@@ -11,13 +11,11 @@ type Props = {
 };
 
 function Country({ countryData }: Props) {
-  const [country] = useState(countryData);
-
   return (
     <>
       <Header />
       <Back />
-      <CountryDetails countryData={country} />
+      <CountryDetails countryData={countryData} />
     </>
   );
 }
@@ -26,6 +24,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const countryName = context?.params?.country;
   const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
   const countryData = await response.json();
+
   return { props: { countryData: countryData[0] as any } };
 };
 
