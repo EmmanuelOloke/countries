@@ -64,7 +64,16 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
     const styledBorderCountries = fullCountryNames.map((borderCountry: string, i: number) => {
       return (
         <Link href={`/${borderCountry}`} key={`${borderCountry}`}>
-          <Box key={i} px={5} py={2} boxShadow="md" fontSize="sm" mr={2} cursor="pointer">
+          <Box
+            key={i}
+            px={5}
+            py={2}
+            boxShadow="lg"
+            _hover={{ boxShadow: 'md' }}
+            fontSize="sm"
+            mr={2}
+            cursor="pointer"
+          >
             {borderCountry}
           </Box>
         </Link>
