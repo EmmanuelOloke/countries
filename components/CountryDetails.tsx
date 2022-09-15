@@ -83,7 +83,7 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
   };
 
   return (
-    <Flex mt="3em" mb="3em" justifyContent="center" alignItems="center">
+    <Flex mt="4em" mb="3em" justifyContent="center" alignItems="center">
       <Flex
         w={{ base: '87vw', sm: '80vw', md: '80vw', lg: '88vw', xl: '87vw', '2xl': '65vw' }}
         flexDirection={{ base: 'column', sm: 'column', md: 'column', xl: 'row', '2xl': 'row' }}
