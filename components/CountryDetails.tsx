@@ -89,13 +89,7 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
         flexDirection={{ base: 'column', sm: 'column', md: 'column', xl: 'row', '2xl': 'row' }}
         gap={{ base: 20, sm: 20, md: 20, lg: 20, xl: 150, '2xl': 150 }}
       >
-        <Image
-          height={350}
-          width={470}
-          // layout="fixed"
-          src={countryData.flags.svg}
-          alt="country flag"
-        />
+        <Image height={350} width={470} src={countryData.flags.svg} alt="country flag" />
 
         <Flex flexDirection="column" justifyContent="center">
           <Heading>{countryData.name.common}</Heading>
