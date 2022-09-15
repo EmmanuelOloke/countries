@@ -11,7 +11,7 @@ const Search: React.FC<Props> = ({ countries, setCountries }) => {
   const [inputContent, setInputContent] = useState('');
   const toast = useToast();
 
-  const handleSubmit = async (e: MouseEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!inputContent) {
@@ -47,26 +47,28 @@ const Search: React.FC<Props> = ({ countries, setCountries }) => {
   };
 
   return (
-    <HStack
-      width={{ '2xl': '35%' }}
-      boxShadow="base"
-      alignItems="center"
-      p="1"
-      justifyContent="space-evenly"
-      borderRadius="md"
-    >
-      <SearchIcon color="gray.500" ml={3} mr={2} />
-      <Input
-        variant="unstyled"
-        placeholder="Search for a country..."
-        fontSize="sm"
-        value={inputContent}
-        onChange={(e) => setInputContent(e.target.value)}
-      />
-      <Button onClick={(e) => handleSubmit(e)}>
-        <ArrowForwardIcon color="gray.500" cursor="pointer" />
-      </Button>
-    </HStack>
+    <form onSubmit={(e) => handleSubmit(e)}>
+      <HStack
+        width={{ '2xl': '35%' }}
+        boxShadow="base"
+        alignItems="center"
+        p="1"
+        justifyContent="space-evenly"
+        borderRadius="md"
+      >
+        <SearchIcon color="gray.500" ml={3} mr={2} />
+        <Input
+          variant="unstyled"
+          placeholder="Search for a country..."
+          fontSize="sm"
+          value={inputContent}
+          onChange={(e) => setInputContent(e.target.value)}
+        />
+        <Button type="submit">
+          <ArrowForwardIcon color="gray.500" cursor="pointer" />
+        </Button>
+      </HStack>
+    </form>
   );
 };
 
