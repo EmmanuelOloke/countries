@@ -49,7 +49,7 @@ const Search: React.FC<Props> = ({ countries, setCountries }) => {
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
       <HStack
-        width={{ '2xl': '35%' }}
+        width={{ lg: '22em', xl: '29em', '2xl': '38em' }}
         boxShadow="base"
         alignItems="center"
         p="1"
