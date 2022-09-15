@@ -1,4 +1,4 @@
-import React, { Dispatch, MouseEvent, SetStateAction, useState } from 'react';
+import React, { Dispatch, SetStateAction, useState } from 'react';
 import { SearchIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 import { Button, HStack, Input, useToast } from '@chakra-ui/react';
 

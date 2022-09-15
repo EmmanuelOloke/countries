@@ -1,8 +1,5 @@
 import { useState } from 'react';
-import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
+import type { GetServerSideProps } from 'next';
 import { Box, Flex, Text } from '@chakra-ui/react';
 import SearchAndFilter from '../components/SearchAndFilter';
 import CountryCard from '../components/CountryCard';

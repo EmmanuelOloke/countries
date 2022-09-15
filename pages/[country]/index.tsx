@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import Head from 'next/head';
-import { Box } from '@chakra-ui/react';
+import React from 'react';
 import { GetServerSideProps } from 'next';
 import Header from '../../components/Header';
 import Back from '../../components/Back';
