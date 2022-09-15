@@ -168,6 +168,7 @@ const CountryDetails: React.FC<Props> = ({ countryData }) => {
               xl: 'row',
               '2xl': 'row',
             }}
+            maxW={{ xl: '38em', '2xl': '38em' }}
           >
             <Text as="b" mr={3} mb={{ base: 3, sm: 3, md: 3, lg: 0, xl: 0, '2xl': 0 }}>
               Border Countries:
