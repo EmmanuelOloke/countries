@@ -1,6 +1,6 @@
 # Frontend Mentor - REST Countries API with color theme switcher
 
-![Design preview for the REST Countries API app coding challenge](./public/preview.png)
+![Design preview for the REST Countries API app coding challenge](./public/preview-home-light.png)
 
 ## The challenge
 
