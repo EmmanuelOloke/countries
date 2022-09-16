@@ -3,6 +3,8 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
+import '../components/LoadingSpinner/LoadingSpinner.css';
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider>
