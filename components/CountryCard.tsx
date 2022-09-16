@@ -2,6 +2,7 @@ import React from 'react';
 import { Flex, Box, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import LoadingSpinner from './LoadingSpinner/LoadingSpinner';
 
 interface Props {
   countries: any[];
@@ -56,7 +57,7 @@ const CountryCard: React.FC<Props> = ({ countries }) => {
     </Link>
   ));
 
-  return <>{eachCountry}</>;
+  return <>{eachCountry ? eachCountry : <LoadingSpinner />}</>;
 };
 
 export default CountryCard;
