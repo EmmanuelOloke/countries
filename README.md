@@ -15,6 +15,8 @@ Users should be able to:
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode (optional)
 
+![Design preview for the REST Countries API app coding challenge](./public/preview-detail-dark.png)
+
 ## Building The Project
 
 I've just learnt NextJS and TypeScript and I'm getting better with React and Chakra-UI, so this was an opportunity to take on an ADVANCED challenge on [Frontend Mentor](https://frontendmentor.io) and really put my skills to the test. It was challenging I must say, I learnt a lot of new concepts and approaches. This particular challenge had a completion rate of ~12% on [Frontend Mentor](https://frontendmentor.io) at the time I attempted it, glad I'm now part of the 12% that were able to see it through to the end 😄
