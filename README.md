@@ -15,7 +15,7 @@ Users should be able to:
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode (optional)
 
-![Design preview for the REST Countries API app coding challenges](./public/preview-detail-dark.png)
+![Design preview for the REST Countries API app coding challenge](./public/preview-detail-dark.png)
 
 ## Building The Project
 
