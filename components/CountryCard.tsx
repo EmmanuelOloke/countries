@@ -10,7 +10,7 @@ interface Props {
 
 const CountryCard: React.FC<Props> = ({ countries }) => {
   const eachCountry = countries?.map((country, i) => (
-    <Link href={`/${country.name.common}`} key={country.name.common}>
+    <Link href={`/${country.name.common}`} key={i}>
       <Box
         flexDirection="column"
         _hover={{ boxShadow: 'md' }}

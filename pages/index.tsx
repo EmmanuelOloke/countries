@@ -39,7 +39,7 @@ function AllCountries({ countries }: Props) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const response = await fetch('https://restcountries.com/v3.1/all');
-  const json = await response.json();
-  return { props: { countries: json as any[] } };
+  const allCountries = await response.json();
+  return { props: { countries: allCountries as object[] } };
 };
 export default AllCountries;
